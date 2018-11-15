@@ -50,7 +50,12 @@ class Song
     self.all.sort_by {|song| song.name}
   end
 
-
+  def self.new_from_filename(file_name)
+    new = file_name.split(%r{\s?[-.]\s?})
+    song = self.create_by_name(new[1])
+    song.artist_name = new[0]
+    song
+  end
 
 
   def self.destroy_all
