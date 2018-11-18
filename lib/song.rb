@@ -39,7 +39,7 @@ class Song
       self.find_by_name(name) || self.create_by_name(name)
   end
   
-   def self.alphabetical()
+   def self.alphabetical
     @@all.sort_by do |x|
       x.name
     end
@@ -60,7 +60,7 @@ class Song
     song
   end
   
-  def self.destroy_all()
+  def self.destroy_all
     @@all.clear
   end
   
